@@ -42,9 +42,11 @@ Crea la funzione lanciaDado() che restituisce una Promise che, dopo 3 secondi, g
 function lanciaDado(){
   const promessa = new Promise((resolve , reject)=>{
     const diceValue = Math.round((Math.random() * 5 )+ 1)
-    //ho provato con un operatore ternario giusto per vedere se la mia logica funzionava 
-    diceValue != 1 ? resolve(console.log(`hai vinto con il risultato di ${diceValue}`)) : reject(console.log(`il dado si è incastrato dalle facce il valore sembra di ${diceValue}`))
-
+    //inserisco un timeout di 3 secondi
+    setTimeout(()=>{
+      console.log("lancio i dadi")
+     
+    }, 3000)
 
 
   })
