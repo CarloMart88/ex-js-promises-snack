@@ -13,7 +13,8 @@ function getPostTitle(id){
     //adesso applico il resolve e il reject della promise
     fetch(`https://dummyjson.com/posts/${id}`)
     .then(res => res.json())
-    .then(obj => resolve(obj))
+    .then(obj => resolve(obj.title))
+    //per vedere il title aggiungo all'obj il title è il gioco è fatto 
     .catch(reject)
     //ora tutto è pronto per poter usare la funzione creata 
   }
