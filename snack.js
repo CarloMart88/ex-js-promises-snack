@@ -22,6 +22,7 @@ return promessa
 }
 
 //con la stessa funzione posso fare chiamate diverse semplicemente cambiando l'id
+/*
 getPostTitle(2)
 .then(obj => console.log(obj))
 .catch(err => console.err(err))
@@ -41,11 +42,12 @@ Crea la funzione lanciaDado() che restituisce una Promise che, dopo 3 secondi, g
 //Crea la funzione lanciaDado() che ritorna una promise
 function lanciaDado(){
   const promessa = new Promise((resolve , reject)=>{
-    const diceValue = Math.round((Math.random() * 5 )+ 1)
+    console.log("lancio i dadi")
     //inserisco un timeout di 3 secondi
     setTimeout(()=>{
-      console.log("lancio i dadi")
-     
+      
+      const diceValue = Math.round((Math.random() * 5 )+ 1)
+      console.log(diceValue)
     }, 3000)
 
 
