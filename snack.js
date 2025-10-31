@@ -7,7 +7,12 @@ Crea una funzione getPost(id) che recupera l'intero post. Concatena una seconda 
 /*abbiamo detto che le promise sono oggetti che definiscono il completamento o il fallimento di un operazione asincrona creo quindi la funzione */
 
 function getPostTitle(id){
-
+  //ora creo la promise dandola a una costante
+  const promessa = new Promise((resolve , reject)=>{
+  
+  }
+)
+return promessa
 }
 
 //faccio il fetch classico
