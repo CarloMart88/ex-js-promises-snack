@@ -22,18 +22,18 @@ return promessa
 }
 
 //con la stessa funzione posso fare chiamate diverse semplicemente cambiando l'id
-/*
+
 getPostTitle(2)
 .then(obj => console.log(obj))
-.catch(err => console.err(err))
+.catch(err => console.error(err))
 
 getPostTitle(3)
 .then(obj => console.log(obj))
-.catch(err => console.err(err))
+.catch(err => console.error(err))
 
 getPostTitle(4)
 .then(obj => console.log(obj))
-.catch(err => console.err(err))
+.catch(err => console.error(err))
 
 
 /**🏆 Snack 2
@@ -41,20 +41,29 @@ Crea la funzione lanciaDado() che restituisce una Promise che, dopo 3 secondi, g
 
 //Crea la funzione lanciaDado() che ritorna una promise
 function lanciaDado(){
+
   const promessa = new Promise((resolve , reject)=>{
-    console.log("lancio i dadi")
-    //inserisco un timeout di 3 secondi
+
+    console.log("sto lanciando i dadi")
+     //inserisco un timeout di 3 secondi
     setTimeout(()=>{
-      
-      const diceValue = Math.round((Math.random() * 5 )+ 1)
-      console.log(diceValue)
-    }, 3000)
+      const diceValue = Math.floor((Math.random()* 6)+1)
+      const isBlocked = Math.floor() < 0.2
 
+      if(isBlocked){
+        resolve(`il valore del dado è ${diceValue}`)
+      }else{
+        reject("il dado si è bloccato")
+      }
 
-  })
+    },3000)
+
+     }
+    )
   return promessa
-}
+  }
 
-lanciaDado()
-
-
+  // e qui invoco la funzione con il then per il resolve e catch per il reject
+  lanciaDado()
+  .then(risultato => console.log(risultato))
+  .catch(error => console.error(error))
