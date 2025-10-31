@@ -9,15 +9,14 @@ Crea una funzione getPost(id) che recupera l'intero post. Concatena una seconda 
 function getPostTitle(id){
   //ora creo la promise dandola a una costante
   const promessa = new Promise((resolve , reject)=>{
-  
+    //passo l'id
+    fetch(`https://dummyjson.com/posts/${id}`)
+    .then(res => res.json())
+    .then(obj => console.log(obj))
+    .catch(err => console.err(err))
+    //ora tutto è pronto per poter usare la funzione creata 
   }
 )
 return promessa
 }
 
-//faccio il fetch classico
-
-fetch(`https://dummyjson.com/posts/1`)
-.then(res => res.json())
-.then(obj => console.log(obj))
-.catch(err => console.err(err))
