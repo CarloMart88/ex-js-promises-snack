@@ -34,3 +34,20 @@ getPostTitle(4)
 .then(obj => console.log(obj))
 .catch(err => console.err(err))
 
+
+/**🏆 Snack 2
+Crea la funzione lanciaDado() che restituisce una Promise che, dopo 3 secondi, genera un numero casuale tra 1 e 6. Tuttavia, nel 20% dei casi, il dado si "incastra" e la Promise va in reject. */
+
+//Crea la funzione lanciaDado() che ritorna una promise
+function lanciaDado(){
+  const promessa = new Promise((resolve , reject)=>{
+
+
+
+  })
+  return promessa
+}
+
+// creo la costante per ottenere numeri random compresi tra 0 e 6
+const lancio = Math.round((Math.random() * 5 )+ 1)
+console.log(lancio)
