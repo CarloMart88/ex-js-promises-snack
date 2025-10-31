@@ -10,13 +10,27 @@ function getPostTitle(id){
   //ora creo la promise dandola a una costante
   const promessa = new Promise((resolve , reject)=>{
     //passo l'id
+    //adesso applico il resolve e il reject della promise
     fetch(`https://dummyjson.com/posts/${id}`)
     .then(res => res.json())
-    .then(obj => console.log(obj))
-    .catch(err => console.err(err))
+    .then(obj => resolve(obj))
+    .catch(reject)
     //ora tutto è pronto per poter usare la funzione creata 
   }
 )
 return promessa
 }
+
+//con la stessa funzione posso fare chiamate diverse semplicemente cambiando l'id
+getPostTitle(2)
+.then(obj => console.log(obj))
+.catch(err => console.err(err))
+
+getPostTitle(3)
+.then(obj => console.log(obj))
+.catch(err => console.err(err))
+
+getPostTitle(4)
+.then(obj => console.log(obj))
+.catch(err => console.err(err))
 
